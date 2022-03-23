@@ -8,6 +8,8 @@ import Hero from './components/Hero';
 import LinkUpAction from './components/LinkUpAction';
 import Step from './components/Step';
 
+import steps from "./components/steps"
+
 function App() {
   return (
     <div className="">
@@ -20,32 +22,21 @@ function App() {
             <h4>How It Works</h4>
           </div>
         </div>
-
-        <Step title="Request an Artisan"
-          meta="Dial the USSD code and request close to you. We have made this process as easy as possible"
-          src="/images/contact@2x.png"
-          alt="request"
-        />
-        <Step title="Get a quote"
-          meta="Our skilled artisans will give you a quote for the required job to be done, don't worry this price is standardized and regulated by us"
-          src="/images/discount@2x.png"
-          alt="request"
-        />
-        <Step title="Get your Job done"
-          meta="Our skilled artisans are adequately skilled to get the job done. 100% guarantee"
-          src="/images/validate@2x.png"
-          alt="request"
-        />
-        <Step title="We provide you with the best Artisans around You"
-          meta="With our rating system, we make sure you get only the best Artisans to help you with your task. Remember to always leave a review"
-          src="/images/review@2x.png"
-          alt="request"
-        />
+        {
+          steps.map(({ title, meta, src, alt }, index) => (
+            <Step title={title} meta={meta} src={src}
+              alt={alt} key={src} index={index} />
+          ))
+        }
       </div>
-  
-      <footer>
-        &copy; {new Date().getFullYear}
-      </footer>
+
+      <div className="container py-3 bg-light">
+        <footer className='row w-100'>
+          <div className="col-auto text-align: center mx-auto">
+            All rights reserved &copy; {new Date().getFullYear()}
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
