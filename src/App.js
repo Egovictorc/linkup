@@ -1,43 +1,26 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
+
+
+
 import './App.css';
 import "./bootstrap-5.1.3-dist/css/bootstrap.min.css"
 
-// components
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import LinkUpAction from './components/LinkUpAction';
-import Step from './components/Step';
-
-import steps from "./components/steps"
+import LandingPage from './pages/LandingPage';
+import About from './pages/About';
+import Signup from './pages/Signup';
+import ProductPage from './pages/ProductPage';
 
 function App() {
   return (
-    <div className="">
-      <Navbar />
-      <Hero />
-      <LinkUpAction />
-      <div className="container">
-        <div className="row m-auto">
-          <div className="col-auto mx-auto mt-5 mb-3">
-            <h4>How It Works</h4>
-          </div>
-        </div>
-        {
-          steps.map(({ title, meta, src, alt }, index) => (
-            <Step title={title} meta={meta} src={src}
-              alt={alt} key={src} index={index} />
-          ))
-        }
-      </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route element={<About />} path="/about" />
+        <Route element={<Signup />} path="/sign-up" />
+        <Route element={<ProductPage />} path="/products" />
 
-      <div className="container py-3 bg-light">
-        <footer className='row w-100'>
-          <div className="col-auto text-align: center mx-auto">
-            All rights reserved &copy; {new Date().getFullYear()}
-          </div>
-        </footer>
-      </div>
-    </div>
+      </Routes>
+    </Router>
   );
 }
 

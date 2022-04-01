@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
+
+
+const MotionLink = motion(Link);
+
 const routes = [
-    "Request an artisan", "refer an artisan", "Register as an artisan", "faq"
+    "Request an artisan", "refer an artisan", "Register as an artisan", "faq", 
 ]
 
 const Navbar = () => {
@@ -13,9 +18,15 @@ const Navbar = () => {
                 </div>
                 <div className="col-10 d-flex justify-content-end align-items-center">
                     {routes.map((route, index) => (
-                        <Route label={route} />
+                        // <MotionLink label={route} key={index} to="/" />
+                        <Link label={route} key={index} to="/" />
                     ))}
-                    <button className='btn btn-bg-primary p-3 bg-info border-5'>Login</button>
+                    <Link label="products" to="/products" />
+                    <motion.button className='btn btn-bg-primary p-3 bg-info border-5'>Sign up</motion.button>
+
+                    <motion.button className='btn btn-bg-primary p-3 bg-info border-5'
+                    whileHover={{color: "red"}}
+                    >Login</motion.button>
                 </div>
             </div>
         </div>

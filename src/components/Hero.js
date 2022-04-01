@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Hero = () => {
     return (
         <div className="container">
@@ -12,7 +13,7 @@ const Hero = () => {
 
 
                 <div className="col-auto">
-                    <img src="/images/ussd@2x.png" width="250px" height="auto" alt="phone" srcset="" />
+                    <img src="/images/ussd@2x.png" width="250px" height="auto" alt="phone" srcSet="" />
                 </div>
             </div>
         </div>
