@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 const MotionLink = motion(Link);
 
 const routes = [
-    "Request an artisan", "refer an artisan", "Register as an artisan", "faq", 
+    "Request an artisan", "refer an artisan", "Register as an artisan", "faq",
 ]
 
 const Navbar = () => {
@@ -22,11 +22,13 @@ const Navbar = () => {
                         <Link label={route} key={index} to="/" />
                     ))}
                     <Link label="products" to="/products" />
-                    <motion.button className='btn btn-bg-primary p-3 bg-info border-5'>Sign up</motion.button>
+                    <div className="d-flex gap-4">
+                        <motion.button className='btn btn-bg-primary p-3 bg-info border-5 rounded-pill'>Sign up</motion.button>
 
-                    <motion.button className='btn btn-bg-primary p-3 bg-info border-5'
-                    whileHover={{color: "red"}}
-                    >Login</motion.button>
+                        <motion.button className='btn btn-bg-primary p-3 bg-info border-5 rounded-pill'
+                            whileHover={{ color: "red" }}
+                        >Login</motion.button>
+                    </div>
                 </div>
             </div>
         </div>

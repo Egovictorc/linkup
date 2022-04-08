@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <div className="container">
+        <div className="container-lg">
             <div className="row justify-content-around align-items-center">
                 <div className="col-4">
                     <h4>Request skilled artisan close to you</h4>
